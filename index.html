@@ -5,6 +5,54 @@
   <title></title>
 </head>
 <body>
-  hi
+
+<div id="app">
+  <g-button>按钮</g-button>
+</div>
+<script src="./node_modules/vue/dist/vue.min.js"></script>
+<script src="./button.js"></script>
+<style>
+  * {margin: 0; padding: 0; box-sizing: border-box;}
+  :root {
+    --button-height: 32px;
+    --button-bg: white;
+    --button-active-bg: #eee;
+    --font-size: 14px;
+    --border-radius: 4px;
+    --color: #999;
+    --border-color: #999;
+    --border-color-hover: #666;
+  }
+  body {
+    font-size: var(--font-size);
+  }
+  #app {
+    margin: 20px;
+  }
+</style>
+<style>
+  .g-button {
+    height: var(--button-height);
+    padding: 0 1em;
+    font: inherit;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    background: var(--button-bg);
+  }
+  .g-button:hover {
+    border-color: var(--border-color-hover);
+  }
+  .g-button:active {
+    background: var(--button-active-bg);
+  }
+  .g-button:focus {
+    outline: none;
+  }
+</style>
+<script>
+  new Vue({
+    el: '#app'
+  })
+</script>
 </body>
 </html>
