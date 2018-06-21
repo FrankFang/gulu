@@ -24,5 +24,8 @@
     "http-server": "^0.11.1",
     "parcel": "^1.9.2",
     "parcel-bundler": "^1.9.2"
+  },
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.common.js"
   }
 }
