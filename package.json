@@ -18,12 +18,15 @@
   },
   "homepage": "https://github.com/FrankFang/gulu.js#readme",
   "dependencies": {
-    "vue": "^2.5.16"
+    "vue": "^2.5.16",
+    "vue-hot-reload-api": "^2.3.0"
   },
   "devDependencies": {
+    "@vue/component-compiler-utils": "^2.0.0",
     "http-server": "^0.11.1",
     "parcel": "^1.9.2",
-    "parcel-bundler": "^1.9.2"
+    "parcel-bundler": "^1.9.2",
+    "vue-template-compiler": "^2.5.16"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"
