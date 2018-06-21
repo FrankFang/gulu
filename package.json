@@ -24,6 +24,7 @@
   "devDependencies": {
     "@vue/component-compiler-utils": "^2.0.0",
     "http-server": "^0.11.1",
+    "node-sass": "^4.9.0",
     "parcel": "^1.9.2",
     "parcel-bundler": "^1.9.2",
     "vue-template-compiler": "^2.5.16"
