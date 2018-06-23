@@ -13,11 +13,12 @@
     display: inline-flex; vertical-align: middle;
     > .g-button {
       border-radius: 0;
-      border-left: none;
+      margin-left: -1px;
       &:first-child {
-        border-left: 1px solid var(--border-color);
+        margin-left: 0;
         border-top-left-radius: var(--border-radius); border-bottom-left-radius: var(--border-radius);}
-      &:last-child {border-top-right-radius: var(--border-radius); border-bottom-right-radius: var(--border-radius);}
+      &:last-child {
+        border-top-right-radius: var(--border-radius); border-bottom-right-radius: var(--border-radius);}
     }
   }
 </style>
