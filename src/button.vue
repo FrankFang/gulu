@@ -1,5 +1,5 @@
 <template>
-  <button class="g-button">
+  <button class="g-button" @click="$emit('click')">
     <g-icon v-if="loading" name="loading" class="spin"></g-icon>
     <g-icon v-if="icon && !loading" :name="icon"/>
     <slot/>
