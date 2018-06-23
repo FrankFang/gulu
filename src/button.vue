@@ -2,7 +2,9 @@
   <button class="g-button" @click="$emit('click')" :class="{[`icon-${iconPosition}`]:true}">
     <g-icon v-if="loading" name="loading" class="spin"></g-icon>
     <g-icon v-if="icon && !loading" :name="icon"/>
-    <slot/>
+    <div class="content">
+      <slot/>
+    </div>
   </button>
 </template>
 <script>
@@ -25,10 +27,12 @@
     &:hover { border-color: var(--border-color-hover); }
     &:active { background: var(--button-active-bg); }
     &:focus { outline: none; }
-    > .g-icon { margin-right: .3em;}
+    > .g-icon { margin-right: .3em; order: 1;}
+    > .content {order: 2;}
     .spin { animation: spin 1s infinite linear; }
     &.icon-left {
-      > .g-icon {order: 2;}
+      > .g-icon {order: 2; margin-right: 0; margin-left: .3em;}
+      > .content {order: 1;}
     }
   }
 </style>
