@@ -30,7 +30,7 @@
     > .g-icon { margin-right: .3em; order: 1;}
     > .content {order: 2;}
     .spin { animation: spin 1s infinite linear; }
-    &.icon-left {
+    &.icon-right {
       > .g-icon {order: 2; margin-right: 0; margin-left: .3em;}
       > .content {order: 1;}
     }
