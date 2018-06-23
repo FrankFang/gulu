@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/FrankFang/frank-test-1/issues"
   },
-  "homepage": "https://github.com/FrankFang/frank-test-1#readme"
+  "homepage": "https://github.com/FrankFang/frank-test-1#readme",
+  "dependencies": {
+    "vue": "^2.5.16"
+  }
 }
