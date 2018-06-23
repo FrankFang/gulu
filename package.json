@@ -22,5 +22,8 @@
   "homepage": "https://github.com/FrankFang/frank-test-1#readme",
   "dependencies": {
     "vue": "^2.5.16"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.9.2"
   }
 }
