@@ -1,7 +1,7 @@
 <template>
   <button class="g-button">
-    <g-icon name="loading" class="spin"></g-icon>
-    <g-icon v-if="icon" :name="icon"/>
+    <g-icon v-if="loading" name="loading" class="spin"></g-icon>
+    <g-icon v-if="icon && !loading" :name="icon"/>
     <slot/>
   </button>
 </template>
@@ -10,7 +10,7 @@
   export default {
     name: 'gulu-button',
     components: {'g-icon': Icon},
-    props: ['icon']
+    props: ['icon', 'loading']
   }
 </script>
 <style lang="scss">
