@@ -1,11 +1,15 @@
 <template>
   <button class="g-button">
+    <g-icon v-if="icon" :name="icon"></g-icon>
     <slot/>
   </button>
 </template>
 <script>
+  import Icon from './icon'
   export default {
-    name: 'gulu-button'
+    name: 'gulu-button',
+    components: {'g-icon': Icon},
+    props: ['icon']
   }
 </script>
 <style lang="scss">
