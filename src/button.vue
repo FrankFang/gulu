@@ -12,7 +12,7 @@
   export default {
     name: 'gulu-button',
     components: {'g-icon': Icon},
-    props: ['icon', 'loading', 'iconPosition']
+    props: {icon: {}, loading: {}, iconPosition: {type: String, default: 'left'}}
   }
 </script>
 <style lang="scss">
