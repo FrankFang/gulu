@@ -27,6 +27,7 @@
     "chai-spies": "^1.0.0",
     "http-server": "^0.11.1",
     "node-sass": "^4.9.0",
+    "node-static": "^0.7.10",
     "parcel": "^1.9.2",
     "parcel-bundler": "^1.9.2",
     "puppeteer": "^1.5.0",
