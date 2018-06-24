@@ -29,6 +29,7 @@
     "node-sass": "^4.9.0",
     "parcel": "^1.9.2",
     "parcel-bundler": "^1.9.2",
+    "puppeteer": "^1.5.0",
     "vue-template-compiler": "^2.5.16"
   },
   "alias": {
