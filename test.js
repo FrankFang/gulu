@@ -1,6 +1,7 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer')
+const p = require('path')
 
-(async () => {
+!(async () => {
   const browser = await puppeteer.launch({headless: true})
   const page = await browser.newPage()
   await page.setRequestInterception(true);
@@ -12,9 +13,11 @@ const puppeteer = require('puppeteer');
   })
   page.once('load', async () => {
     const errors = await page.evaluate(() => {
-      return window.errors || []
+      return window.errors 
     })
-    if (errors.length === 0) {
+    if(errors === undefined){
+      console.log('没用找到测试用例')
+    } else if (errors.length === 0) {
       console.info('没有错误')
     } else {
       console.error('有错误')
@@ -24,5 +27,7 @@ const puppeteer = require('puppeteer');
     }
     await browser.close()
   });
-  await page.goto('http://127.0.0.1:1234')
+  const path = p.join(__dirname, 'dist', 'index.html')
+  console.log(path)
+  await page.goto(`file://${path}`)
 })()
