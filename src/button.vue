@@ -47,7 +47,7 @@
       > .content { order: 1; }
       > .icon { order: 2; margin-right: 0; margin-left: .1em;}
     }
-    .loading{
+    .loading {
       animation: spin 2s infinite linear;
     }
   }
