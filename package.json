@@ -4,7 +4,9 @@
   "description": "一个轮子",
   "main": "index.js",
   "scripts": {
-    "test": "node ./test.js"
+    "dev-test": "node ./dev-test.js",
+    "test": "npx parcel build index.html --no-minify && node ./test.js",
+    "clean": "rm -rf .cache; rm -rf dist/*"
   },
   "repository": {
     "type": "git",
