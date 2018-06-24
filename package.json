@@ -26,9 +26,10 @@
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^2.0.0",
-    "chai-spies": "^1.0.0",
     "http-server": "^0.11.1",
     "karma": "^2.0.4",
+    "karma-chai": "^0.1.0",
+    "karma-chai-spies": "^0.1.4",
     "karma-chrome-launcher": "^2.2.0",
     "karma-mocha": "^1.3.0",
     "karma-mocha-reporter": "^2.2.5",

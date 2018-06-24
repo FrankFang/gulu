@@ -62,17 +62,18 @@ describe('Button', () => {
     vm.$el.remove()
     vm.$destroy()
   })
-  it('点击触发 click 事件', () => {
+  it('点击 button 触发 click 事件', () => {
     const Constructor = Vue.extend(Button)
     const vm = new Constructor({
       propsData: {
         icon: 'settings',
       }
     }).$mount()
-    const spy = chai.spy(() => {})
-    vm.$on('click', spy)
+
+    const callback = sinon.fake();
+    vm.$on('click', callback)
     vm.$el.click()
-    expect(spy).to.have.been.called()
+    expect(callback).to.have.been.called
 
   })
 })
