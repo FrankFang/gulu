@@ -47,4 +47,32 @@ describe('Button', () => {
     vm.$el.remove()
     vm.$destroy()
   })
+  it('设置 iconPosition 可以改变 order', () => {
+    const div = document.createElement('div')
+    document.body.appendChild(div)
+    const Constructor = Vue.extend(Button)
+    const vm = new Constructor({
+      propsData: {
+        icon: 'settings',
+        iconPosition: 'right'
+      }
+    }).$mount(div)
+    const icon = vm.$el.querySelector('svg')
+    expect(getComputedStyle(icon).order).to.eq('2')
+    vm.$el.remove()
+    vm.$destroy()
+  })
+  it('点击触发 click 事件', () => {
+    const Constructor = Vue.extend(Button)
+    const vm = new Constructor({
+      propsData: {
+        icon: 'settings',
+      }
+    }).$mount()
+    const spy = chai.spy(() => {})
+    vm.$on('click', spy)
+    vm.$el.click()
+    expect(spy).to.have.been.called()
+
+  })
 })
