@@ -22,31 +22,8 @@ try {
     vm.$destroy()
   }
   {
-    const Constructor = Vue.extend(Button)
-    const vm = new Constructor({
-      propsData: {
-        icon: 'settings',
-        loading: true
-      }
-    }).$mount()
-    const useElements = vm.$el.querySelectorAll('use')
-    expect(useElements.length).to.equal(1)
-    expect(useElements[0].getAttribute('xlink:href')).to.equal('#i-loading')
-    vm.$destroy()
   }
   {
-    const div = document.createElement('div')
-    document.body.appendChild(div)
-    const Constructor = Vue.extend(Button)
-    const vm = new Constructor({
-      propsData: {
-        icon: 'settings',
-      }
-    }).$mount(div)
-    const icon = vm.$el.querySelector('svg')
-    expect(getComputedStyle(icon).order).to.eq('1')
-    vm.$el.remove()
-    vm.$destroy()
   }
   {
     const div = document.createElement('div')
