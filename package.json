@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/FrankFang/gulu.js#readme",
   "dependencies": {
+    "chai": "^4.1.2",
     "vue": "^2.5.16",
     "vue-hot-reload-api": "^2.3.0"
   },
