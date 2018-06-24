@@ -79,5 +79,7 @@ try {
 } catch (error) {
   window.errors = [error]
 } finally {
-  console.log(window.errors)
+  window.errors.forEach((error) => {
+    console.error(error.message)
+  })
 }
