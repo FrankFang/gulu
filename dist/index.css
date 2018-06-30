@@ -1,0 +1,55 @@
+.g-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle; }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+.g-button {
+  vertical-align: middle;
+  height: var(--button-height);
+  padding: 0 1em;
+  font: inherit;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  background: var(--button-bg);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center; }
+  .g-button:hover {
+    border-color: var(--border-color-hover);
+    position: relative;
+    z-index: 1; }
+  .g-button:active {
+    background: var(--button-active-bg); }
+  .g-button:focus {
+    outline: none; }
+  .g-button > .g-icon {
+    margin-right: .3em;
+    order: 1; }
+  .g-button > .content {
+    order: 2; }
+  .g-button .spin {
+    animation: spin 1s infinite linear; }
+  .g-button.icon-right > .g-icon {
+    order: 2;
+    margin-right: 0;
+    margin-left: .3em; }
+  .g-button.icon-right > .content {
+    order: 1; }
+.g-button-group {
+  display: inline-flex;
+  vertical-align: middle; }
+  .g-button-group > .g-button {
+    border-radius: 0;
+    margin-left: -1px; }
+    .g-button-group > .g-button:first-child {
+      margin-left: 0;
+      border-top-left-radius: var(--border-radius);
+      border-bottom-left-radius: var(--border-radius); }
+    .g-button-group > .g-button:last-child {
+      border-top-right-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius); }
