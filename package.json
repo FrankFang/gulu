@@ -2,7 +2,7 @@
   "name": "gulu",
   "version": "0.0.1",
   "description": "一个轮子",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "dev-test": "parcel watch test/* & karma start",
     "test": "parcel build test/* --no-minify && karma start --single-run",
