@@ -32,70 +32,35 @@
   </style>
 </head>
 <body>
+<style>
+  .demo {
+    background: #ddd;
+    border: 1px solid #666;
+    height: 100px;
+  }
+</style>
 
 <div id="app">
-  <div style="border: 1px solid black;">
-
-    <g-row gutter="20">
-      <g-col span="24"
-        :ipad="{span:8}"
-        :narrow-pc="{span:4}"
-        :pc="{span:2}"
-        :wide-pc="{span:1}"
-      >
-        1
-      </g-col>
-      <g-col span="24"
-        :ipad="{span:16}"
-        :narrow-pc="{span:20}"
-        :pc="{span:22}"
-        :wide-pc="{span:23}"
-      >11
-      </g-col>
-    </g-row>
-    <g-row gutter="20">
-      <g-col span="4">1</g-col>
-      <g-col span="20">11</g-col>
-    </g-row>
-    <g-row gutter="20">
-      <g-col span="4">1</g-col>
-      <g-col span="18" offset="2">11</g-col>
-    </g-row>
-    <g-row gutter="20">
-      <g-col span="4">1</g-col>
-      <g-col span="8" offset="2">11</g-col>
-      <g-col span="8" offset="2">11</g-col>
-    </g-row>
-    <g-row gutter="20">
-      <g-col span="4">1</g-col>
-      <g-col span="4" offset="6">11</g-col>
-      <g-col span="8" offset="2">11</g-col>
-    </g-row>
-  </div>
-  <hr>
-  <div class="box">
-    <g-input v-model="message"></g-input>
-    <p>{{message}}</p>
-    <button @click="message+=1">+1</button>
-  </div>
-  <div class="box">
-    <g-button :loading="loading1" @click="loading1 = !loading1">
-      按钮
-    </g-button>
-    <g-button icon="settings" :loading="loading2"
-      @click="loading2 = !loading2">
-      按钮
-    </g-button>
-    <g-button icon="settings" icon-position="right" :loading="loading3"
-      @click="loading3 = !loading3">
-      按钮
-    </g-button>
-    <g-button-group>
-      <g-button icon="left">上一页</g-button>
-      <g-button>更多</g-button>
-      <g-button icon="right" icon-position="right">下一页</g-button>
-    </g-button-group>
-  </div>
+  <g-row>
+    <g-col span="24" :narrow-pc="{span:8}">
+      <div class="demo"></div>
+    </g-col>
+    <g-col span="24" :narrow-pc="{span:8}">
+      <div class="demo"></div>
+    </g-col>
+    <g-col span="24" :narrow-pc="{span:8}">
+      <div class="demo"></div>
+    </g-col>
+    <g-col span="24" :narrow-pc="{span:8}">
+      <div class="demo"></div>
+    </g-col>
+    <g-col span="24" :narrow-pc="{span:8}">
+      <div class="demo"></div>
+    </g-col>
+    <g-col span="24" :narrow-pc="{span:8}">
+      <div class="demo"></div>
+    </g-col>
+  </g-row>
 </div>
 <script src="./src/app.js"></script>
 </body>
