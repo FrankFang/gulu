@@ -27,6 +27,10 @@ Vue.component('g-sider', Sider)
 Vue.component('g-toast', Toast)
 Vue.use(plugin)
 
+import createElement from 'vue'
+
+const h = createElement
+
 new Vue({
   el: '#app',
   data: {
@@ -36,10 +40,12 @@ new Vue({
     message: 'hi'
   },
   created(){
+    this.$toast('文字', {
+      enableHtml: false
+    })
   },
   methods: {
     showToast(){
-      this.$toast('我是 message')
     }
   }
 })
