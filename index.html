@@ -27,37 +27,21 @@
 </head>
 <body>
 
-<div id="app">
-  <g-tabs>
-    <div>hi</div>
-  </g-tabs>
-  <g-tabs :selected.sync="selectedTab" @update:selected="yyy">
-    <g-tabs-head>
-      <template slot="actions">
-        <button>设置</button>
-      </template>
-      <g-tabs-item name="woman" disabled>
-        <g-icon name="settings"></g-icon>美女
-      </g-tabs-item>
-      <g-tabs-item name="finance">
-        财经
-      </g-tabs-item>
-      <g-tabs-item name="sports">
-        体育
-      </g-tabs-item>
-    </g-tabs-head>
-    <g-tabs-body>
-      <g-tabs-pane name="woman">
-        美女相关资讯
-      </g-tabs-pane>
-      <g-tabs-pane name="finance">
-        财经相关资讯
-      </g-tabs-pane>
-      <g-tabs-pane name="sports">
-        体育相关资讯
-      </g-tabs-pane>
-    </g-tabs-body>
-  </g-tabs>
+<div id="app" style="padding-top: 100px; padding-left: 100px;">
+
+  <g-popover>
+    <template slot="content">
+      <div>popover内容</div>
+    </template>
+    <button>点我</button>
+  </g-popover>
+  <g-popover>
+    <template slot="content">
+      <div>popover内容</div>
+    </template>
+    <button>点我</button>
+  </g-popover>
+
 </div>
 <script src="./src/app.js"></script>
 </body>
