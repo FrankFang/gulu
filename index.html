@@ -27,9 +27,9 @@
 </head>
 <body>
 
-<div id="app">
+<div id="app" style="padding-left: 100px;">
 
-  <div style="overflow: hidden; padding: 150px;">
+  <div style="overflow: hidden; padding-top: 150px; padding-bottom: 40px;">
     <g-popover position="bottom">
       <template slot="content">
         <div>askdjsakdjsakjdslkjdlskjdlsjkdlskjdlsjkdlskjdlsajkdlajkdlkajdlksajdladjk</div>
@@ -50,6 +50,33 @@
       <g-button>点我</g-button>
     </g-popover>
     <g-popover position="right">
+      <template slot="content">
+        <div>popover内容</div>
+      </template>
+      <g-button>点我</g-button>
+    </g-popover>
+  </div>
+  <div style="overflow: hidden; padding-bottom: 150px;">
+    <g-popover position="bottom" trigger="hover">
+      <template slot="content">
+        <div>askdjsakdjsakjdslkjdlskjdlsjkdlskjdlsjkdlskjdlsajkdlajkdlkajdlksajdladjk</div>
+        <div>askdjsakdjsakjdslkjdlskjdlsjkdlskjdlsjkdlskjdlsajkdlajkdlkajdlksajdladjk</div>
+      </template>
+      <g-button>点我</g-button>
+    </g-popover>
+    <g-popover position="top" trigger="hover">
+      <template slot="content">
+        <div>popover内容</div>
+      </template>
+      <g-button>点我</g-button>
+    </g-popover>
+    <g-popover position="left" trigger="hover">
+      <template slot="content">
+        <div>popover内容</div>
+      </template>
+      <g-button>点我</g-button>
+    </g-popover>
+    <g-popover position="right" trigger="hover">
       <template slot="content">
         <div>popover内容</div>
       </template>
