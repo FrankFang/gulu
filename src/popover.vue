@@ -112,7 +112,6 @@
         if (this.$refs.triggerWrapper.contains(event.target)) {
           if (this.visible === true) {
             this.close()
-            console.log('click close')
           } else {
             this.open()
           }
