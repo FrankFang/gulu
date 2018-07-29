@@ -27,65 +27,12 @@
 </head>
 <body>
 
-<div id="app" style="padding-left: 100px;">
-
-  <div style="overflow: hidden; padding-top: 150px; padding-bottom: 40px;">
-    <g-popover position="bottom">
-      <template slot="content" slot-scope="{close}">
-        <div>文字</div>
-        <div>popover <a href="http://qq.com">看新网</a> 内容</div>
-        <g-button @click="close">关闭</g-button>
-      </template>
-      <g-button>点我</g-button>
-    </g-popover>
-    <g-popover position="top">
-      <template slot="content">
-        <div>popover内容
-          <g-button>关闭</g-button>
-        </div>
-      </template>
-      <g-button>点我</g-button>
-    </g-popover>
-    <g-popover position="left">
-      <template slot="content">
-        <div>popover内容</div>
-      </template>
-      <g-button>点我</g-button>
-    </g-popover>
-    <g-popover position="right">
-      <template slot="content">
-        <div>popover内容</div>
-      </template>
-      <g-button>点我</g-button>
-    </g-popover>
-  </div>
-  <div style="overflow: hidden; padding-bottom: 150px;">
-    <g-popover position="bottom" trigger="hover">
-      <template slot="content">
-        <div>askdjsakdjsakjdslkjdlskjdlsjkdlskjdlsjkdlskjdlsajkdlajkdlkajdlksajdladjk</div>
-        <div>askdjsakdjsakjdslkjdlskjdlsjkdlskjdlsjkdlskjdlsajkdlajkdlkajdlksajdladjk</div>
-      </template>
-      <g-button>点我</g-button>
-    </g-popover>
-    <g-popover position="top" trigger="hover">
-      <template slot="content">
-        <div>popover内容</div>
-      </template>
-      <g-button>点我</g-button>
-    </g-popover>
-    <g-popover position="left" trigger="hover">
-      <template slot="content">
-        <div>popover内容</div>
-      </template>
-      <g-button>点我</g-button>
-    </g-popover>
-    <g-popover position="right" trigger="hover">
-      <template slot="content">
-        <div>popover <a href="http://qq.com">看新网</a> 内容</div>
-      </template>
-      <g-button>点我</g-button>
-    </g-popover>
-  </div>
+<div id="app" style="padding: 100px;">
+  <g-collapse>
+    <g-collapse-item title="标题1">内容1</g-collapse-item>
+    <g-collapse-item title="标题2">内容2</g-collapse-item>
+    <g-collapse-item title="标题3">内容3</g-collapse-item>
+  </g-collapse>
 
 </div>
 <script src="./src/app.js"></script>
