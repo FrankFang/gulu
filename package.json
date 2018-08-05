@@ -26,11 +26,12 @@
   },
   "homepage": "https://github.com/FrankFang/frank-test-1#readme",
   "dependencies": {
-    "vue": "^2.5.16",
-    "vue-hot-reload-api": "^2.3.0",
-    "vue2": "^1.0.0"
+    "vue": "2.5.16",
+    "vue-hot-reload-api": "^2.3.0"
   },
   "devDependencies": {
+    "vue-server-renderer": "2.5.16",
+    "vue-router": "^3.0.1",
     "@vue/component-compiler-utils": "^2.0.0",
     "chai": "^4.1.2",
     "chai-spies": "^1.0.0",
