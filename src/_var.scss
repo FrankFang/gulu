@@ -1,5 +1,6 @@
 $border-color-hover: #666;
 $border-color: #999;
+$border-color-light: lighten($border-color, 25%);
 $border-radius: 4px;
 $box-shadow-color: rgba(0, 0, 0, 0.5);
 $button-active-bg: #eee;
@@ -9,3 +10,6 @@ $color: #333;
 $font-size: 14px;
 $input-height: 32px;
 $red: #F1453D;
+.box-shadow {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
