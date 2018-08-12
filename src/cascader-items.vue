@@ -1,13 +1,14 @@
 <template>
   <div class="cascaderItem" :style="{height: height}">
     <div class="left">
-      <div class="label" v-for="item in items" @click="leftSelected = item">
+      <div class="label" v-for="item in items" @click="onClickLabel(item)">
         {{item.name}}
         <icon class="icon" v-if="item.children" name="right"></icon>
       </div>
     </div>
     <div class="right" v-if="rightItems">
-      <gulu-cascader-items :items="rightItems" :height="height"></gulu-cascader-items>
+      <gulu-cascader-items ref="right" :items="rightItems" :height="height"
+        :level="level+1" :selected="selected" @update:selected="onUpdateSelected"></gulu-cascader-items>
     </div>
   </div>
 </template>
@@ -23,20 +24,36 @@
       },
       height: {
         type: String
-      }
-    },
-    data () {
-      return {
-        leftSelected: null
+      },
+      selected: {
+        type: Array,
+        default: () => []
+      },
+      level: {
+        type: Number,
+        default: 0
       }
     },
     computed: {
       rightItems () {
-        if (this.leftSelected && this.leftSelected.children) {
-          return this.leftSelected.children
+        let currentSelected = this.selected[this.level]
+        if (currentSelected && currentSelected.children) {
+          return currentSelected.children
         } else {
           return null
         }
+      }
+    },
+    mounted () {
+    },
+    methods: {
+      onClickLabel (item) {
+        let copy = JSON.parse(JSON.stringify(this.selected))
+        copy[this.level] = item
+        this.$emit('update:selected', copy)
+      },
+      onUpdateSelected (newSelected) {
+        this.$emit('update:selected', newSelected)
       }
     }
   }
@@ -49,6 +66,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     height: 100px;
+    border: 1px solid red;
     .left {
       height: 100%;
       padding: .3em 0;
