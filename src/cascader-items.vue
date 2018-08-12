@@ -34,8 +34,13 @@
         default: 0
       }
     },
+    updated () {
+      console.log('cascader items updated')
+      console.log(JSON.stringify(this.items))
+    },
     computed: {
       rightItems () {
+        console.log('计算rightItems')
         let currentSelected = this.selected[this.level]
         if (currentSelected && currentSelected.children) {
           return currentSelected.children
