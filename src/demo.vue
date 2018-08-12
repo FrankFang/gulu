@@ -3,9 +3,10 @@
     <p>{{selected &&selected[0] &&selected[0].name || '空'}}</p>
     <p>{{selected &&selected[1] &&selected[1].name || '空'}}</p>
     <p>{{selected &&selected[2] &&selected[2].name || '空'}}</p>
-    <g-cascader :source="source" popover-height="200px"
-      :selected="selected" @update:selected="selected = $event"></g-cascader>
-    <p>22222</p>
+    <div style="padding: 20px;">
+      <g-cascader :source="source" popover-height="200px"
+        :selected="selected" @update:selected="selected = $event"></g-cascader>
+    </div>
   </div>
 </template>
 <script>
