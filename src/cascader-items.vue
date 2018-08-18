@@ -36,16 +36,14 @@
     },
     updated () {
       console.log('cascader items updated')
-      console.log(JSON.stringify(this.items))
     },
     computed: {
       rightItems () {
-        console.log('计算rightItems')
-        let currentSelected = this.selected[this.level]
-        if (currentSelected && currentSelected.children) {
-          return currentSelected.children
-        } else {
-          return null
+        if (this.selected[this.level]) {
+          let selected = this.items.filter((item) => item.name === this.selected[this.level].name)
+          if (selected && selected[0].children && selected[0].children.length > 0) {
+            return selected[0].children
+          }
         }
       }
     },
