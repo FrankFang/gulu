@@ -4,7 +4,7 @@
       {{result || '&nbsp;'}}
     </div>
     <div class="popover-wrapper" v-if="popoverVisible">
-      <cascader-items :items="source" class="popover"
+      <cascader-items :items="source" class="popover" :loadData="loadData"
         :height="popoverHeight" :selected="selected" @update:selected="onUpdateSelected"></cascader-items>
     </div>
   </div>
@@ -77,8 +77,10 @@
           toUpdate.children = result
           this.$emit('update:source', copy)
         }
-        this.loadData(lastItem, updateSource) // 回调:把别人传给我的函数调用一下
-        // 调回调的时候传一个函数,这个函数理论应该被调用
+        if (!lastItem.isLeaf) {
+          this.loadData && this.loadData(lastItem, updateSource) // 回调:把别人传给我的函数调用一下
+          // 调回调的时候传一个函数,这个函数理论应该被调用
+        }
       }
     },
     computed: {
