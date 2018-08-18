@@ -1,21 +1,26 @@
 <template>
   <div>
-    <p>{{selected &&selected[0] &&selected[0].name || '空'}}</p>
-    <p>{{selected &&selected[1] &&selected[1].name || '空'}}</p>
-    <p>{{selected &&selected[2] &&selected[2].name || '空'}}</p>
     <div style="padding: 20px;">
       <g-cascader :source.sync="source" popover-height="200px"
         @update:source="onUpdateSource"
         @update:selected="onUpdateSelected"
         :selected.sync="selected" :load-data="loadData"></g-cascader>
     </div>
-    {{source}}
+    <g-popover>
+      <template>
+        <button>点我</button>
+      </template>
+      <template slot="content">
+        弹出内容
+      </template>
+    </g-popover>
   </div>
 </template>
 <script>
   import Button from "./button";
   import Cascader from "./cascader";
   import db from './db'
+  import Popover from './popover'
 
 
   function ajax (parentId = 0) {
@@ -38,7 +43,8 @@
     name: "demo",
     components: {
       "g-button": Button,
-      "g-cascader": Cascader
+      "g-cascader": Cascader,
+      "g-popover": Popover
     },
     data () {
       return {
