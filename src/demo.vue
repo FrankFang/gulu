@@ -2,16 +2,9 @@
   <div>
     <div style="padding: 20px;">
       <g-cascader :source.sync="source" popover-height="200px"
-        @update:source="onUpdateSource"
-        @update:selected="onUpdateSelected"
         :selected.sync="selected" :load-data="loadData"></g-cascader>
     </div>
-    <div style="padding: 20px;">
-      <g-cascader :source.sync="source" popover-height="200px"
-        @update:source="onUpdateSource"
-        @update:selected="onUpdateSelected"
-        :selected.sync="selected" :load-data="loadData"></g-cascader>
-    </div>
+    {{selected.map(item=> item.name)}}
     <g-popover>
       <template>
         <button>点我</button>
@@ -27,7 +20,6 @@
   import Cascader from "./cascader";
   import db from './db'
   import Popover from './popover'
-  import {removeListener} from './click-outside'
 
 
   function ajax (parentId = 0) {
@@ -42,7 +34,7 @@
           }
         })
         success(result)
-      }, 300)
+      }, 3000)
     })
   }
 
@@ -70,13 +62,10 @@
     methods: {
       loadData ({id}, updateSource) {
         ajax(id).then(result => {
+          console.log(result)
           updateSource(result) // 回调:把别人传给我的函数调用一下
         })
       },
-      onUpdateSource () {
-      },
-      onUpdateSelected () {
-      }
     }
   };
 </script>
