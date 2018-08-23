@@ -60,7 +60,6 @@
     components: {GRow, GCol},
     data () {
       return {
-        value: '1',
         content: `
           * {
             box-sizing: border-box;
@@ -95,7 +94,7 @@
 
 
 
-      `.replace(/ {8}/g, '').trim()
+      `.replace(/^ {8}/gm, '').trim()
       }
     }
   }

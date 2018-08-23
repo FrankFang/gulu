@@ -8,15 +8,8 @@ title: 快速上手
 
 ## 安装
 
-```bash
-npm install frank-test-1 
-```
+请参考 [安装](../install/) 章节
 
-或
-
-```bash
-yarn add frank-test-1 
-```
 
 ## Hello World
 

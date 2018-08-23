@@ -88,7 +88,6 @@
     components: {GRow, GCol},
     data () {
       return {
-        value: '1',
         content: `
           * {
             box-sizing: border-box;
@@ -147,7 +146,7 @@
               <div class="demoCol">2</div>
             </g-col>
           </g-row>
-      `.replace(/ {8}/g, '').trim()
+      `.replace(/^ {8}/gm, '').trim()
       }
     }
   }
