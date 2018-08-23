@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/frank-test-1/',
+  base: '/gulu/',
   title: '轱辘UI',
   description: '一个好用的UI框架',
   themeConfig: {
