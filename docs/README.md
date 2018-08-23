@@ -1,8 +1,10 @@
 # 轱辘 UI
 
+[官方文档](https://frankfang.github.io/gulu/)
+
 轱辘 UI 是一个不太一样的 UI 框架。
 
-本 UI 框架是一个「面向源码阅读者」的框架。
+本 UI 框架是一个「面向源码阅读者」的框架。如果对你有帮助，请不要吝惜你的 star。
 
 也就是说，我制作这个框架的目的就是让前端新人学习轮子的制作思路。所有代码都追求可读性。
 
@@ -51,8 +53,6 @@
 
 这一次为了顺应前端的潮流，我直接采用 Vue 2 来造轮子。如果你正在学习 Vue 2，那么轱辘 UI 的源码会非常适合你阅读。
 
-
-
 ## 视觉稿
 
 本 UI 框架借鉴了一些成熟 UI 框架（如 Framework7、Element UI 和 Ant Design）的外观，简化之后我自己制作了一个[视觉稿](https://www.yuque.com/u29422/gulu/artboards/22283)。
@@ -62,3 +62,19 @@
 ## 为什么叫轱辘UI
 
 因为轱辘就是「轮子」的意思。
+
+## 源码学习
+
+1. 安装依赖
+    ```
+    yarn install
+    ```
+
+2. 启动 dev server
+    ```
+    yarn serve
+    ```
+
+## 微信交流群
+
+[点击查看二维码](http://qr.jirengu.com/api/taskUrl?tid=8)

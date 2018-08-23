@@ -53,8 +53,6 @@
 
 这一次为了顺应前端的潮流，我直接采用 Vue 2 来造轮子。如果你正在学习 Vue 2，那么轱辘 UI 的源码会非常适合你阅读。
 
-
-
 ## 视觉稿
 
 本 UI 框架借鉴了一些成熟 UI 框架（如 Framework7、Element UI 和 Ant Design）的外观，简化之后我自己制作了一个[视觉稿](https://www.yuque.com/u29422/gulu/artboards/22283)。
@@ -77,3 +75,6 @@
     yarn serve
     ```
 
+## 微信交流群
+
+[点击查看二维码](http://qr.jirengu.com/api/taskUrl?tid=8)
