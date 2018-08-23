@@ -10,7 +10,7 @@
 2. 也可以通过我[录制的视频](https://xiedaimala.com/courses/6d63da67-6eea-4711-aeb4-0c3a949341dc)来学习
     抱歉，由于制作非常耗时，所以视频是收费的。不过项目搭建过程的录屏是**免费**的，这几节视频能帮你快速从零开始本项目。
 
-如果你对代码有疑问，欢迎[提issue](https://github.com/frankfang/frank-test-1/issues)，我会回答你的疑问。
+如果你对代码有疑问，欢迎[提issue](https://github.com/frankfang/gulu/issues)，我会回答你的疑问。
 
 本 UI 框架是基于 Vue 2 实现的。
 
