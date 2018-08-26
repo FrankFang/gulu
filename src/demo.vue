@@ -1,81 +1,44 @@
 <template>
   <div>
-    <div style="padding: 20px;">
-      <g-cascader :source.sync="source" popover-height="200px"
-        :selected.sync="selected" :load-data="loadData"></g-cascader>
-    </div>
-    {{selected.map(item=> item.name)}}
-    <g-popover>
-      <template>
-        <button>点我</button>
-      </template>
-      <template slot="content">
-        弹出内容
-      </template>
-    </g-popover>
+    <g-slides class="wrapper" width="300px" height="200px" :selected.sync="selected">
+      <g-slides-item name="1">
+        <div class="box">1</div>
+      </g-slides-item>
+      <g-slides-item name="2">
+        <div class="box">2</div>
+      </g-slides-item>
+      <g-slides-item name="3">
+        <div class="box">3</div>
+      </g-slides-item>
+    </g-slides>
   </div>
 </template>
 <script>
-  import Button from "./button";
-  import Cascader from "./cascader";
-  import db from './db'
-  import Popover from './popover'
+  import GSlides from './slides'
+  import GSlidesItem from './slides-item'
 
-
-  function ajax (parentId = 0) {
-    return new Promise((success, fail) => {
-      setTimeout(() => {
-        let result = db.filter((item) => item.parent_id == parentId)
-        result.forEach(node => {
-          if (db.filter(item => item.parent_id === node.id).length > 0) {
-            node.isLeaf = false
-          }else{
-            node.isLeaf = true
-          }
-        })
-        success(result)
-      }, 1000)
-    })
-  }
 
   export default {
     name: "demo",
-    components: {
-      "g-button": Button,
-      "g-cascader": Cascader,
-      "g-popover": Popover
-    },
+    components: {GSlides, GSlidesItem},
     data () {
       return {
-        selected: [],
-        source: []
+        selected: '2'
       };
     },
     created () {
-      ajax(0).then(result => {
-        console.log(result)
-        this.source = result
-      })
-    },
-    destroyed () {
-    },
-    methods: {
-      loadData ({id}, updateSource) {
-        ajax(id).then(result => {
-          console.log(result)
-          updateSource(result) // 回调:把别人传给我的函数调用一下
-        })
-      },
     }
   };
 </script>
 <style>
   * {margin: 0; padding: 0; box-sizing: border-box;}
-  img {max-width: 100%;}
-  html {
-    --font-size: 14px;
+  .wrapper {
+    margin: 40px;
   }
-  body {
-    font-size: var(--font-size);
+  .box {
+    width: 100%;
+    height: 350px;
+    background: #ddd;
+    border: 1px solid red;
   }
 </style>
