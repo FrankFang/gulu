@@ -23,7 +23,7 @@
     components: {GSlides, GSlidesItem},
     data () {
       return {
-        selected: '2'
+        selected: undefined
       };
     },
     created () {
