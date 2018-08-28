@@ -11,6 +11,7 @@ module.exports = {
     sidebar: [
       {
         title: '入门',
+        collapsable: false,
         children: [
           '/install/',
           '/get-started/',
@@ -18,6 +19,7 @@ module.exports = {
       },
       {
         title: '组件',
+        collapsable: false,
         children: [
           '/components/button',
           '/components/tabs',
