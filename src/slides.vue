@@ -2,7 +2,6 @@
   <div class="g-slides" @mouseenter="onMouseEnter"
     @mouseleave="onMouseLeave"
     @touchstart="onTouchStart"
-    @touchmove="onTouchMove"
     @touchend="onTouchEnd"
   >
     <div class="g-slides-window" ref="window">
@@ -11,7 +10,7 @@
       </div>
     </div>
     <div class="g-slides-dots">
-      <span @click="onClickPrev">
+      <span @click="onClickPrev" data-action="prev">
         <g-icon name="left"></g-icon>
       </span>
       <span v-for="n in childrenLength" :class="{active: selectedIndex === n-1}"
@@ -19,7 +18,7 @@
         @click="select(n-1)">
         {{n}}
       </span>
-      <span @click="onClickNext">
+      <span @click="onClickNext" data-action="next">
         <g-icon name="right"></g-icon>
       </span>
     </div>
@@ -61,6 +60,9 @@
     updated () {
       this.updateChildren()
     },
+    beforeDestroy () {
+      this.pause()
+    },
     computed: {
       selectedIndex () {
         let index = this.names.indexOf(this.selected)
@@ -84,8 +86,6 @@
         this.pause()
         if (e.touches.length > 1) {return}
         this.startTouch = e.touches[0]
-      },
-      onTouchMove () {
       },
       onTouchEnd (e) {
         let endTouch = e.changedTouches[0]

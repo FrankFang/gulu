@@ -128,6 +128,68 @@ describe('Slides.vue', () => {
       done()
     }, 21)
   })
-  it('可以点击上一张', () => {})
-  it('可以点击下一张', () => {})
+  it('可以点击上一张', (done) => {
+    Vue.component('GSlidesItem', SlidesItem)
+    const callback = sinon.fake();
+    const wrapper = mount(Slides, {
+      propsData: {
+        autoPlay: true,
+        autoPlayDelay: 20,
+        selected: '1'
+      },
+      slots: {
+        default: `
+          <g-slides-item name="1">
+            <div class="box1">1</div>
+          </g-slides-item>
+          <g-slides-item name="2">
+            <div class="box2">2</div>
+          </g-slides-item>
+          <g-slides-item name="3">
+            <div class="box3">3</div>
+          </g-slides-item>
+        `
+      },
+      listeners: {
+        'update:selected': callback
+      }
+    })
+    setTimeout(() => {
+      wrapper.find('[data-action="prev"]').trigger('click')
+      expect(callback).to.have.been.calledWith('3')
+      done()
+    }, 21)
+  })
+  it('可以点击下一张', (done) => {
+    Vue.component('GSlidesItem', SlidesItem)
+    const callback = sinon.fake();
+    const wrapper = mount(Slides, {
+      propsData: {
+        autoPlay: true,
+        autoPlayDelay: 20,
+        selected: '1'
+      },
+      slots: {
+        default: `
+          <g-slides-item name="1">
+            <div class="box1">1</div>
+          </g-slides-item>
+          <g-slides-item name="2">
+            <div class="box2">2</div>
+          </g-slides-item>
+          <g-slides-item name="3">
+            <div class="box3">3</div>
+          </g-slides-item>
+        `
+      },
+      listeners: {
+        'update:selected': callback
+      }
+    })
+    setTimeout(() => {
+      wrapper.find('[data-action="next"]').trigger('click')
+      expect(callback).to.have.been.calledWith('2')
+      done()
+    }, 21)
+  })
 })
