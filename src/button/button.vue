@@ -32,7 +32,7 @@
   }
 </script>
 <style lang="scss" scoped>
-  @import "../var"; // webpack 配置 scss 根目录
+  @import "var"; // webpack 配置 scss 根目录
   .g-button { font-size: $font-size; height: $button-height; padding: 0 1em;
     border-radius: $border-radius; border: 1px solid $border-color;
     background: $button-bg;
