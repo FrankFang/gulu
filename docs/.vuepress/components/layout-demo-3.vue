@@ -33,11 +33,11 @@
   }
 </style>
 <script>
-  import GLayout from '../../../src/layout'
-  import GHeader from '../../../src/header'
-  import GFooter from '../../../src/footer'
-  import GContent from '../../../src/content'
-  import GSider from '../../../src/sider'
+  import GLayout from '../../../src/layout/layout'
+  import GHeader from '../../../src/layout/header'
+  import GFooter from '../../../src/layout/footer'
+  import GContent from '../../../src/layout/content'
+  import GSider from '../../../src/layout/sider'
 
   export default {
     components: {GLayout, GHeader, GFooter, GContent, GSider},

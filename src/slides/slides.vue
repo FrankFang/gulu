@@ -26,7 +26,7 @@
 </template>
 
 <script>
-  import GIcon from './icon'
+  import GIcon from '../icon'
   export default {
     components: {GIcon},
     props: {
