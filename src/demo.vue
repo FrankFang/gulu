@@ -21,6 +21,7 @@
       </g-sub-nav>
       <g-nav-item name="hire">招聘</g-nav-item>
     </g-nav>
+    <p>你好，我是中文</p>
   </div>
 </template>
 <script>
