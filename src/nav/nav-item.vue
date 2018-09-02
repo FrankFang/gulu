@@ -24,7 +24,6 @@
     },
     methods: {
       onClick () {
-        console.log(this.name)
         this.$emit('add:selected', this.name)
       }
     }
