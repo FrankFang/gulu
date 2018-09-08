@@ -1,10 +1,8 @@
 <template>
   <div>
-    <g-nav :selected.sync="selected" style=" margin: 20px;">
+    <g-nav :selected.sync="selected" style="margin: 20px;">
       <g-nav-item name="home">
-        <a href="https://jirengu.com" target="_blank">
           首页
-        </a>
       </g-nav-item>
       <g-sub-nav name="about">
         <template slot="title">关于</template>
@@ -46,7 +44,8 @@
       </g-sub-nav>
       <g-nav-item name="hire">招聘</g-nav-item>
     </g-nav>
-    <p>你好，我是中文</p>
+    <p>用户选中了 {{selected}}</p>
+
   </div>
 </template>
 <script>
@@ -59,9 +58,24 @@
     components: {GNav, GNavItem, GSubNav},
     data () {
       return {
-        selected: ['culture']
+        selected: 'culture'
       };
     },
+    methods: {
+      onChange (selected) {
+        console.log(selected)
+        if (selected.indexOf('home') >= 0) {
+          alert('hi')
+        }
+      }
+    },
+    watch: {
+      selected (newValue) {
+        if (newValue === 'home') {
+          alert('hi')
+        }
+      }
+    }
   };
 </script>
 <style>
