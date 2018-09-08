@@ -1,5 +1,6 @@
 <template>
-  <div class="g-nav-item" :class="{selected, vertical}" @click="onClick">
+  <div class="g-nav-item" :class="{selected, vertical}" @click="onClick"
+    :data-name="name">
     <slot></slot>
   </div>
 </template>
