@@ -14,7 +14,7 @@ title: 快速上手
 ## Hello World
 
 ```javascript
-import {Button} from 'frank-test-1-1'
+import {Button} from 'gulu'
 import Vue from 'vue'
 
 new Vue({
