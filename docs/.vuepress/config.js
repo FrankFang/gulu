@@ -29,6 +29,7 @@ module.exports = {
           '/components/layout',
           '/components/toast',
           '/components/popover',
+          '/components/slides',
         ]
       },
 
