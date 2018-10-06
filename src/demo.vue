@@ -1,79 +1,71 @@
 <template>
-  <div>
-    <g-nav :selected.sync="selected" style="margin: 20px;">
-      <g-nav-item name="home">首页</g-nav-item>
-      <g-sub-nav name="about">
-        <template slot="title">关于</template>
-        <g-nav-item name="culture">企业文化</g-nav-item>
-        <g-nav-item name="developers">开发团队</g-nav-item>
-        <g-sub-nav name="contacts">
-          <template slot="title">联系方式</template>
-          <g-nav-item name="wechat">微信</g-nav-item>
-          <g-nav-item name="qq">QQ</g-nav-item>
-          <g-sub-nav name="phone">
-            <template slot="title">手机</template>
-            <g-nav-item name="cm">移动</g-nav-item>
-            <g-nav-item name="cu">联通</g-nav-item>
-            <g-nav-item name="cn">电信</g-nav-item>
-          </g-sub-nav>
-        </g-sub-nav>
+  <div class="form-wrapper">
+    <form class="form" @submit.prevent="onSubmit">
+      <h1>登录</h1>
+      <demo-form-row label="邮箱" :error="errors.email">
+        <g-input type="text" v-model="user.email"></g-input>
+      </demo-form-row>
+      <demo-form-row label="密码" :error="errors.password">
+        <g-input type="password" v-model="user.password"></g-input>
+      </demo-form-row>
+      <div>
+        <g-button class="ok" type="submit">提交</g-button>
+      </div>
+    </form>
 
-      </g-sub-nav>
-      <g-nav-item name="hire">招聘</g-nav-item>
-    </g-nav>
-    <g-nav :selected.sync="selected" vertical style="width: 200px; margin: 20px; margin-top: 200px;">
-      <g-nav-item name="home">首页</g-nav-item>
-      <g-sub-nav name="about">
-        <template slot="title">关于</template>
-        <g-nav-item name="culture">企业文化</g-nav-item>
-        <g-nav-item name="developers">开发团队</g-nav-item>
-        <g-sub-nav name="contacts">
-          <template slot="title">联系方式</template>
-          <g-nav-item name="wechat">微信</g-nav-item>
-          <g-nav-item name="qq">QQ</g-nav-item>
-          <g-sub-nav name="phone">
-            <template slot="title">手机</template>
-            <g-nav-item name="cm">移动</g-nav-item>
-            <g-nav-item name="cu">联通</g-nav-item>
-            <g-nav-item name="cn">电信</g-nav-item>
-          </g-sub-nav>
-        </g-sub-nav>
-
-      </g-sub-nav>
-      <g-nav-item name="hire">招聘</g-nav-item>
-    </g-nav>
-    <p>用户选中了 {{selected}}</p>
 
   </div>
 </template>
+<style>
+  body {background: #888;}
+</style>
+<style scoped lang="scss">
+  .form {
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    margin-top: 36px;
+    min-height: 60vh;
+    &-wrapper {
+      display: flex;justify-content: center;
+    }
+    .controls {
+    }
+    .ok {
+      display: block;
+      width: 100%;
+      margin-top: 24px;
+    }
+  }
+</style>
 <script>
-  import GNav from './nav/nav.vue'
-  import GNavItem from './nav/nav-item.vue'
-  import GSubNav from './nav/sub-nav.vue'
+  import GButton from './button/button'
+  import GInput from './input'
+  import DemoFormRow from './demo-form-row'
+  import formMixin from './form-mixin'
 
   export default {
     name: "demo",
-    components: {GNav, GNavItem, GSubNav},
+    components: {GButton, GInput, DemoFormRow},
+    mixins: [formMixin],
     data () {
       return {
-        selected: 'culture'
+        user: {
+          email: '',
+          password: ''
+        },
+        rules: [
+          {key: 'email', pattern: 'email', required: true},
+          {key: 'password', minLength: 6, required: true}
+        ]
       };
     },
     methods: {
-      onChange (selected) {
-        console.log(selected)
-        if (selected.indexOf('home') >= 0) {
-          alert('hi')
-        }
+      onSubmit () {
+        this.validate(this.user)
+        console.log(this.errors)
       }
     },
-    watch: {
-      selected (newValue) {
-        if (newValue === 'home') {
-          alert('hi')
-        }
-      }
-    }
   };
 </script>
 <style>
