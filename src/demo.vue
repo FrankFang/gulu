@@ -3,7 +3,13 @@
     {{selected}}
     <div style="margin: 20px;">
       <g-table :columns="columns" :data-source="dataSource" bordered :selected-items.sync="selected" :order-by.sync="orderBy"
-        @update:orderBy="x" :loading="loading" height="400px"></g-table>
+        @update:orderBy="x" :loading="loading" :height="400" expend-field="description" checkable>
+        <template slot-scope="xxx">
+          <button @click="edit(xxx.item)">编辑</button>
+          <button @click="view(xxx.item)">查看</button>
+          <button>删除</button>
+        </template>
+      </g-table>
     </div>
     <div style="margin: 20px;">
       <g-table :columns="columns" :data-source="dataSource" bordered compact :striped="false"></g-table>
@@ -25,7 +31,7 @@
         currentPage: 1,
         selected: [],
         columns: [
-          {text: '姓名', field: 'name'}, // 1
+          {text: '姓名', field: 'name', width: 100}, // 1
           {text: '分数', field: 'score'},
         ],
         orderBy: { // true - 开启排序，但是不确定asc desc
@@ -33,8 +39,8 @@
         },
         loading: false,
         dataSource: [
-          {id: 1, name: '方方', score: 100},
-          {id: 2, name: '圆圆', score: 99},
+          {id: 1, name: '方方', score: 100, description: 'xxxx xxxx'},
+          {id: 2, name: '圆圆', score: 99, description: 'yyyy yyyy'},
           {id: 3, name: '张三', score: 100},
           {id: 4, name: '李四', score: 99},
           {id: 5, name: '超人', score: 100},
@@ -57,6 +63,12 @@
       }
     },
     methods: {
+      edit (item) {
+        alert(`开始编辑${item.id}`)
+      },
+      view (item) {
+        alert(`开始查看${item.id}`)
+      },
       x () {
         this.loading = true
         setTimeout(() => {
