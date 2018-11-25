@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name gulu src/index.js",
     "test": "karma start --single-run",
     "test:unit": "karma start",
     "test:unit:old": "vue-cli-service test:unit",
