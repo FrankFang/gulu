@@ -1,6 +1,7 @@
 {
   "name": "gulu",
-  "version": "0.0.2",
+  "version": "0.0.4",
+  "main":"dist/gulu.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name gulu src/index.js",
