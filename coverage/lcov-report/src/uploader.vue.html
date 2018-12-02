@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/uploader.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> uploader.vue
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">64.56% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>51/79</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>12/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>50/75</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+  &lt;div class="gulu-uploader"&gt;
+    &lt;div @click="onClickUpload"&gt;
+      &lt;slot&gt;&lt;/slot&gt;
+    &lt;/div&gt;
+    &lt;ol class="gulu-uploader-fileList"&gt;
+      &lt;li v-for="file in fileList" :key="file.name"&gt;
+&nbsp;
+        &lt;template v-if="file.status === 'uploading'"&gt;
+          &lt;g-icon name="loading" class="gulu-uploader-spin"&gt;&lt;/g-icon&gt;
+        &lt;/template&gt;
+        &lt;template v-else-if="file.type.indexOf('image') === 0"&gt;
+          &lt;img class="gulu-uploader-image" :src="file.url" width="32" height="32" alt=""&gt;
+        &lt;/template&gt;
+        &lt;temaplte v-else&gt;
+          &lt;div class="gulu-uploader-defaultImage"&gt;&lt;/div&gt;
+        &lt;/temaplte&gt;
+&nbsp;
+&nbsp;
+        &lt;span class="gulu-uploader-name" :class="{[file.status]: file.status}"&gt;{{file.name}}&lt;/span&gt;
+        &lt;button class="gulu-uploader-remove" @click="onRemoveFile(file)"&gt;x&lt;/button&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;div ref="temp" style="width: 0; height: 0; overflow: hidden;"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&nbsp;
+&lt;script&gt;
+  import GIcon from './icon'
+  import http from './http'
+&nbsp;
+  export default {
+    name: "GuluUploader",
+    components: {GIcon},
+    props: {
+      name: {type: String, required: true},
+      action: {type: String, required: true},
+      method: {type: String, default: 'POST'},
+      parseResponse: {type: Function, required: true},
+      fileList: {type: Array, default: () =<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >&gt; [</span></span>]},
+      sizeLimit: {type: Number}
+    },
+    data () {
+      return {
+        url: 'about:blank'
+      }
+    },
+    methods: {
+      onClickUpload () {
+        let input = this.createInput()
+        input.addEventListener('change', (e) =&gt; {
+          this.uploadFiles(input.files) // 单文件
+          input.remove()
+        })
+        input.click()
+      },
+      onRemoveFile (file<span class="fstat-no" title="function not covered" >) {</span>
+        let answer <span class="cstat-no" title="statement not covered" >= window.confirm('你确定要删除这玩意吗'</span>)
+<span class="cstat-no" title="statement not covered" >        if (answer) {</span>
+          let copy <span class="cstat-no" title="statement not covered" >= [...this.fileList</span>]
+          let index <span class="cstat-no" title="statement not covered" >= copy.indexOf(file</span>)
+<span class="cstat-no" title="statement not covered" >          copy.splice(index, 1</span>)
+<span class="cstat-no" title="statement not covered" >          this.$emit('update:fileList', copy</span>)
+        }
+      },
+      beforeUploadFiles (rawFiles, newNames) {
+        rawFiles = Array.from(rawFiles)
+        for (let i = 0; i &lt; rawFiles.length; i++) {
+          let {size, type} = rawFiles[i]
+        <span class="missing-if-branch" title="if path not taken" >I</span>  if (size &gt; this.sizeLimit) {
+<span class="cstat-no" title="statement not covered" >            this.$emit('error', '文件大于2MB'</span>)
+<span class="cstat-no" title="statement not covered" >            return fals</span>e
+          }
+        }
+        let x = rawFiles.map((rawFile, i) =&gt; {
+          let {type, size} = rawFile
+          return {name: newNames[i], type, size, status: 'uploading'}
+        })
+        this.$emit('update:fileList', [...this.fileList, ...x])
+        return true
+      },
+      afterUploadFiles (newName, url) {
+        let file = this.fileList.filter(f =&gt; f.name === newName)[0]
+        let index = this.fileList.indexOf(file)
+        let fileCopy = JSON.parse(JSON.stringify(file))
+        fileCopy.url = url
+        fileCopy.status = 'success'
+        let fileListCopy = [...this.fileList]
+        fileListCopy.splice(index, 1, fileCopy)
+        this.$emit('update:fileList', fileListCopy)
+        this.$emit('uploaded')
+      },
+      uploadFiles (rawFiles) {
+        let newNames = []
+        for (let i = 0; i &lt; rawFiles.length; i++) {
+          let rawFile = rawFiles[i]
+          let {name, size, type} = rawFile
+          let newName = this.generateName(name)
+          newNames[i] = newName
+        }
+      <span class="missing-if-branch" title="if path not taken" >I</span>  if (!this.beforeUploadFiles(rawFiles, newNames))<span class="cstat-no" title="statement not covered" > {retur</span>n}
+        for (let i = 0; i &lt; rawFiles.length; i++) {
+          let rawFile = rawFiles[i]
+          let newName = newNames[i]
+          let formData = new FormData()
+          formData.append(this.name, rawFile)
+          this.doUploadFiles(formData, (response) =&gt; {
+            let url = this.parseResponse(response)
+            this.url = url
+            this.afterUploadFiles(newName, url)
+          }, (xhr) =<span class="fstat-no" title="function not covered" >&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            this.uploadError(xhr, newName</span>)
+          })
+        }
+      },
+      uploadError (xhr, newName<span class="fstat-no" title="function not covered" >) {</span>
+        let file <span class="cstat-no" title="statement not covered" >= this.fileList.filter(f =<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >&gt; f.name === newNam</span></span>e)[0</span>]
+        let index <span class="cstat-no" title="statement not covered" >= this.fileList.indexOf(file</span>)
+        let fileCopy <span class="cstat-no" title="statement not covered" >= JSON.parse(JSON.stringify(file)</span>)
+<span class="cstat-no" title="statement not covered" >        fileCopy.status = 'fail</span>'
+        // fileCopy.failMessage = '尺寸过大'
+        let fileListCopy <span class="cstat-no" title="statement not covered" >= [...this.fileList</span>]
+<span class="cstat-no" title="statement not covered" >        fileListCopy.splice(index, 1, fileCopy</span>)
+<span class="cstat-no" title="statement not covered" >        this.$emit('update:fileList', fileListCopy</span>)
+        let error <span class="cstat-no" title="statement not covered" >= '</span>'
+<span class="cstat-no" title="statement not covered" >        if (xhr.status === 0) {</span>
+<span class="cstat-no" title="statement not covered" >          error = '网络无法连接</span>'
+        }
+<span class="cstat-no" title="statement not covered" >        this.$emit('error', error</span>)
+      },
+      generateName (name) {
+        while (this.fileList.filter(f =<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >&gt; f.name === nam</span></span>e).length &gt; 0) {
+          let dotIndex <span class="cstat-no" title="statement not covered" >= name.lastIndexOf('.'</span>)
+          let nameWithoutExtension <span class="cstat-no" title="statement not covered" >= name.substring(0, dotIndex</span>)
+          let extension <span class="cstat-no" title="statement not covered" >= name.substring(dotIndex</span>)
+<span class="cstat-no" title="statement not covered" >          name = nameWithoutExtension + '(1)' + extensio</span>n
+        }
+        return name
+      },
+      doUploadFiles (formData, success, fail) {
+        http[this.method.toLowerCase()](this.action, {success, fail, data: formData})
+      },
+      createInput () {
+        this.$refs.temp.innerHTML = ''
+        let input = document.createElement('input')
+        input.accept = "image/png"
+        input.type = 'file'
+        input.multiple = true
+        this.$refs.temp.appendChild(input)
+        return input
+      }
+&nbsp;
+    }
+  }
+&lt;/script&gt;
+&nbsp;
+&lt;style scoped lang="scss"&gt;
+  @import "var";
+  .gulu-uploader {
+    &amp;-fileList {
+      list-style: none;
+      &gt; li {
+        display: flex;
+        align-items: center;
+        margin: 8px 0;
+        border: 1px solid darken($grey, 10%);
+      }
+    }
+    &amp;-defaultImage {
+      width: 32px;
+      height: 32px;
+      margin-right: 8px;
+    }
+    &amp;-image {
+      margin-right: 8px;
+      border: none;
+    }
+    &amp;-name {
+      margin-right: auto;
+      &amp;.success {
+        color: green;
+      }
+      &amp;.fail {
+        color: red;
+      }
+    }
+    &amp;-remove {
+      width: 32px;
+      height: 32px;
+    }
+    &amp;-spin {
+      width: 32px;
+      height: 32px;
+      @include spin;
+    }
+  }
+&lt;/style&gt;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Dec 01 2018 21:13:27 GMT+0800 (CST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
