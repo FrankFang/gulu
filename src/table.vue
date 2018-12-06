@@ -12,9 +12,9 @@
             <div class="gulu-table-header">
               {{column.text}}
               <span v-if="column.field in orderBy" class="gulu-table-sorter" @click="changeOrderBy(column.field)">
-              <g-icon name="asc" :class="{active: orderBy[column.field] === 'asc'}"/>
-              <g-icon name="desc" :class="{active: orderBy[column.field] === 'desc'}"/>
-            </span>
+                <g-icon name="asc" :class="{active: orderBy[column.field] === 'asc'}"/>
+                <g-icon name="desc" :class="{active: orderBy[column.field] === 'desc'}"/>
+              </span>
             </div>
           </th>
           <th ref="actionsHeader" v-if="$scopedSlots.default"></th>
@@ -33,7 +33,14 @@
               /></td>
             <td :style="{width: '50px'}" v-if="numberVisible">{{index+1}}</td>
             <template v-for="column in columns">
-              <td :style="{width: column.width + 'px'}" :key="column.field">{{item[column.field]}}</td>
+              <td :style="{width: column.width + 'px'}" :key="column.field">
+                <template v-if="column.render">
+                  <vnodes :vnodes="column.render({value: item[column.field]})"></vnodes>
+                </template>
+                <template v-else>
+                  {{item[column.field]}}
+                </template>
+              </td>
             </template>
             <td v-if="$scopedSlots.default">
               <div ref="actions" style="display: inline-block;">
@@ -59,11 +66,18 @@
 <script>
   import GIcon from './icon'
   export default {
-    components: {GIcon},
+    components: {
+      GIcon,
+      vnodes: {
+        functional: true,
+        render: (h, context) => context.props.vnodes
+      }
+    },
     name: "GuluTable",
     data () {
       return {
-        expendedIds: []
+        expendedIds: [],
+        columns: []
       }
     },
     props: {
@@ -93,10 +107,6 @@
         type: Boolean,
         default: false
       },
-      columns: {
-        type: Array,
-        required: true
-      },
       dataSource: {
         type: Array,
         required: true,
@@ -118,6 +128,14 @@
       }
     },
     mounted () {
+      this.columns = this.$slots.default.map(node => {
+        let {text, field, width} = node.componentOptions.propsData
+        let render = node.data.scopedSlots && node.data.scopedSlots.default
+        return {text, field, width, render}
+      })
+      let result = this.columns[0].render({value: '方方'})
+      console.log(result)
+
       let table2 = this.$refs.table.cloneNode(false)
       this.table2 = table2
       table2.classList.add('gulu-table-copy')

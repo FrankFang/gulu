@@ -1,69 +1,83 @@
 <template>
-
-  <div style="display: flex; justify-content: center;">
-    <div style="width: 600px; border: 1px solid black;">
-      <p>段落1</p>
-      <p>段落2</p>
-      <p>段落3</p>
-      <p>段落4</p>
-      <p>段落5</p>
-      <p>段落6</p>
-      <p>段落7</p>
-      <p>段落8</p>
-      <p>段落9</p>
-      <g-sticky :distance="100">
-        <div style="border: 1px solid red; ">
-          <img src="https://i.loli.net/2018/11/24/5bf94b2047e33.png" alt="">
-        </div>
-      </g-sticky>
-      <p>段落1</p>
-      <p>段落2</p>
-      <p>段落3</p>
-      <p>段落4</p>
-      <p>段落5</p>
-      <p>段落6</p>
-      <p>段落7</p>
-      <p>段落8</p>
-      <p>段落9</p>
-      <p>段落10</p>
-      <p>段落11</p>
-      <p>段落12</p>
-      <p>段落13</p>
-      <p>段落14</p>
-      <p>段落15</p>
-      <p>段落16</p>
-      <p>段落17</p>
-      <p>段落18</p>
-      <p>段落19</p>
-      <p>段落20</p>
-      <p>段落21</p>
-      <p>段落22</p>
-      <p>段落23</p>
-      <p>段落24</p>
-      <p>段落25</p>
-      <p>段落26</p>
-      <p>段落27</p>
-      <p>段落28</p>
-      <p>段落29</p>
-      <p>段落30</p>
+  <div>
+    {{selected}}
+    <div style="margin: 20px;">
+      <g-table :data-source="dataSource" bordered :selected-items.sync="selected" :order-by.sync="orderBy"
+        @update:orderBy="x" :loading="loading" :height="400" expend-field="description" checkable>
+        <g-table-column text="姓名" field="name" :width="100">
+          <template slot-scope="props">
+            <a :href="`/users/${props.value}`">{{props.value}}</a>
+          </template>
+        </g-table-column>
+        <g-table-column text="分数" field="score"></g-table-column>
+      </g-table>
     </div>
   </div>
-
 </template>
-
 <script>
-  import GSticky from './sticky'
+  import GPager from './pager'
+  import GTable from './table'
+  import GTableColumn from './table-column'
 
   export default {
     name: "demo",
-    components: {GSticky},
+    components: {GPager, GTable, GTableColumn},
+    data () {
+      return {
+        currentPage: 1,
+        selected: [],
+        // columns: [
+        //   {text: '姓名', field: 'name', width: 100}, // 1
+        //   {text: '分数', field: 'score'},
+        // ],
+        orderBy: { // true - 开启排序，但是不确定asc desc
+          score: 'desc'
+        },
+        loading: false,
+        dataSource: [
+          {id: 1, name: '方方', score: 100, description: 'xxxx xxxx'},
+          {id: 2, name: '圆圆', score: 99, description: 'yyyy yyyy'},
+          {id: 3, name: '张三', score: 100},
+          {id: 4, name: '李四', score: 99},
+          {id: 5, name: '超人', score: 100},
+          {id: 6, name: '蝙蝠侠', score: 99},
+          {id: 7, name: '蜘蛛侠', score: 100},
+          {id: 8, name: '钢铁侠', score: 99},
+          {id: 9, name: '方方', score: 100},
+          {id: 10, name: '圆圆', score: 99},
+          {id: 11, name: '张三', score: 100},
+          {id: 12, name: '李四', score: 99},
+          {id: 13, name: '超人', score: 100},
+          {id: 14, name: '蝙蝠侠', score: 99},
+          {id: 15, name: '蜘蛛侠', score: 100},
+          {id: 16, name: '钢铁侠', score: 99},
+          {id: 17, name: '蜘蛛侠', score: 100},
+          {id: 18, name: '钢铁侠', score: 99},
+          {id: 19, name: '方方', score: 100},
+          {id: 20, name: '圆圆', score: 99},
+        ]
+      }
+    },
+    methods: {
+      edit (item) {
+        alert(`开始编辑${item.id}`)
+      },
+      view (item) {
+        alert(`开始查看${item.id}`)
+      },
+      x () {
+        this.loading = true
+        setTimeout(() => {
+          this.dataSource = this.dataSource.sort((a, b) => a.score - b.score)
+          this.loading = false
+        }, 3000)
+      }
+    }
   };
-
 </script>
 <style>
   * {margin: 0; padding: 0; box-sizing: border-box;}
   body {background: white;}
-  img {max-width: 100%;}
 </style>
 <style scoped lang="scss">
 </style>
