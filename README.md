@@ -1,83 +1,76 @@
-# 轱辘 UI
+# Gulu UI
 
-[官方文档](https://frankfang.github.io/gulu/)
+[Official Documentation](https://frankfang.github.io/gulu/)
 
-轱辘 UI 是一个不太一样的 UI 框架。
+Gulu UI is a different kind of UI framework.
 
-本 UI 框架是一个「面向源码阅读者」的框架。如果对你有帮助，请不要吝惜你的 star。
+This UI framework is designed for "source code readers". If it's helpful to you, please don't hesitate to star it.
 
-也就是说，我制作这个框架的目的就是让前端新人学习轮子的制作思路。所有代码都追求可读性。
+In other words, the purpose of creating this framework is to help frontend beginners learn how to build UI components. All the code aims for readability.
 
-1. 你可以通过查看逐个 commit 来学习本框架的制作思路
-2. 也可以通过我[录制的视频](https://xiedaimala.com/courses/6d63da67-6eea-4711-aeb4-0c3a949341dc)来学习
-   （抱歉，由于制作非常耗时，所以视频是收费的。不过项目搭建过程的录屏是**免费**的，这几节视频能帮你快速从零开始本项目。）
+1. You can learn the process of building this framework by examining each commit.
+2. You can also learn through the [recorded videos](https://xiedaimala.com/courses/6d63da67-6eea-4711-aeb4-0c3a949341dc) I made
+   (Sorry, the videos are paid due to the significant amount of time spent on producing them. However, the screencasts of the project setup process are **free**, and they can help you quickly get started with this project.)
 
-如果你想从第一个commit 开始看，请点击[这里](https://github.com/FrankFang/gulu/commits/master?after=36fbd6867d0a223184ad67e3d2bc3569e88847e0+104)。
+If you want to start from the first commit, please click [here](https://github.com/FrankFang/gulu/commits/master?after=36fbd6867d0a223184ad67e3d2bc3569e88847e0+104).
 
-如果你对代码有疑问，欢迎[提issue](https://github.com/frankfang/gulu/issues)，我会回答你的疑问。也可以在本文末尾加群咨询。
+If you have any questions about the code, feel free to [raise an issue](https://github.com/frankfang/gulu/issues), and I will answer your questions. You can also join the group for consultation at the end of this article.
 
-本 UI 框架是基于 Vue 2 实现的。
+This UI framework is implemented based on Vue 2.
 
-注意：本 UI 框架的代码尚未完全完工（目前代码大概完成 50%），请不要在生产环境中使用本 UI 框架。
+Note: The code of this UI framework is not yet fully completed (currently about 50% done), so please do not use it in a production environment.
 
-## 你能学到什么
+## What can you learn
 
-1. 单元测试、覆盖率、持续集成等工程概念
-2. 重构、TDD/BDD、设计模式、单向数据流等技术概念
-2. Vue 的几乎所有功能，并且是深入理解这些功能，而不是肤浅理解
+1. Engineering concepts such as unit testing, code coverage, and continuous integration.
+2. Technical concepts such as refactoring, TDD/BDD, design patterns, and one-way data flow.
+3. Almost all the features of Vue, and a deep understanding of these features rather than just a shallow understanding.
 
+## Available Components
 
-## 有哪些轮子
+* Simple Components: Button, Input, Grid, Layout, Toast, Tabs, Popover, Accordion (code completed)
+* Advanced Components: Cascader, Carousel, Responsive Navbar, Pagination, Form Validation, Table, Image Upload, Sticky, Tree, Suggestion, Datepicker (code not completed)
+* Others: Router, State Management (code not completed)
 
-* 简单轮子：按钮、输入框、网格、布局、Toast、Tabs、Popover、手风琴（代码已完成）
-* 进阶轮子：级联选择、无缝轮播、响应式导航条、分页、表单验证、Table、图片上传、Sticky、Tree、Suggestion、Datepicker（代码未完成）
-* 其他：路由、状态管理（代码未完成）
+Note: This is the current plan, and the specific components to be completed may differ from the above.
 
-注意：这只是目前的计划，具体要完成的轮子可能与上面有出入。
+## Project Features
 
-## 项目特点
+1. Continuous integration using Travis CI.
+2. Rich unit tests with an expected test coverage of over 90% upon project completion.
+3. Self-explanatory code that can be understood even without comments.
+4. Initially built with Parcel for easy onboarding of beginners, later switched to Vue CLI 3 to achieve more functionalities.
 
-1. 使用 Travis CI 进行持续集成
-2. 有丰富的单元测试，项目完成时，期望测试覆盖率超过 90%
-3. 自说明的代码，即使没有注释，你也能看懂
-4. 初期我使用 parcel 构建方便新人上手，后期改为 Vue Cli 3 以实现更多功能
+## Background
 
-## 背景
+A few years ago, I published an article called "[Learn Frontend the Hard Way](https://juejin.im/post/58ef6004ac502e006c16f2d6)". At that time, I felt that although there were many good libraries in the open-source community, their source code was not suitable for **beginners** to read.
 
-我几年前曾经发表过《[笨办法学前端](https://juejin.im/post/58ef6004ac502e006c16f2d6)》一文，
-当时我觉得开源社区里虽然有很多不错的库，但是这些库都是以实用为主，其源码并不适合**新人**阅读。
+So I spent my spare time creating a few wheels with native JS and put them on GitHub. Unexpectedly, hundreds of people followed and hoped that I could release more detailed tutorials.
 
-于是我业余时间用原生 JS 造了几个轮子放在 GitHub，没想到居然有几百人关注，还希望我能发布更详细的教程。
+But at that time, I didn't have time to create more detailed tutorials.
 
-但是我当时并没有时间来做更详细的教程。
+Now finally... I'm still busy, but I've decided to record videos on "building wheels" every Saturday and Sunday.
 
-现在我终于……还是很忙，不过我决定用每周六和周日来录制「造轮子」的视频。
+This time, in order to follow the trend of frontend development, I directly used Vue 2 to build the wheels. If you are learning Vue 2, then the source code of Gulu UI will be very suitable for you to read.
 
-这一次为了顺应前端的潮流，我直接采用 Vue 2 来造轮子。如果你正在学习 Vue 2，那么轱辘 UI 的源码会非常适合你阅读。
+## Visual Design
 
-## 视觉稿
+This UI framework draws inspiration from some mature UI frameworks (such as Framework7, Element UI, and Ant Design) in terms of appearance. After simplification, I created my own [visual design draft](https://www.yuque.com/u29422/gulu/artboards/22283).
 
-本 UI 框架借鉴了一些成熟 UI 框架（如 Framework7、Element UI 和 Ant Design）的外观，简化之后我自己制作了一个[视觉稿](https://www.yuque.com/u29422/gulu/artboards/22283)。
+If you find any shortcomings in the visual design draft, you can leave a comment directly on it, and I will see it.
 
-如果你发现视觉稿有什么不足的地方，可以直接在上面留言，我也会看到。
+## Why is it called Gulu UI
 
-## 为什么叫轱辘UI
+Because "Gulu" means "wheel" in Chinese.
 
-因为轱辘就是「轮子」的意思。
+## Source Code Study
 
-## 源码学习
-
-1. 安装依赖
+1. Install dependencies
     ```
     yarn install
     ```
 
-2. 启动 dev server
+2. Start dev server
     ```
     yarn serve
     ```
-
-## 微信交流群
-
-[点击查看二维码](http://qr.jirengu.com/api/taskUrl?tid=8)
-
